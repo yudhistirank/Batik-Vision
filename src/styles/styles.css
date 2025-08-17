@@ -161,19 +161,57 @@ nav .nav-list {
   flex-wrap: wrap;
   gap: 16px;
 }
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  nav .nav-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
 /* End of Navigation */
 
 /* Header */
 header {
   background-color: #33333355;
-  height: 600px;
+  height: 650px;
 
   background-image: url('../images/bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
-  box-shadow: 0 8px 4px 4px var(--secondary-color);
 }
 
 header .jumbotron {
@@ -351,7 +389,7 @@ main {
 
 /* Hero untuk halaman utama */
 .hero-home {
-  background-image: url('../images/bg.png');
+  background-image: url('../images/beranda.png');
 }
 
 /* Hero untuk halaman Batik Madura */
@@ -366,7 +404,7 @@ main {
 
 /* Statistik Section */
 .stats-section {
-  padding: 60px 20px;
+  padding: 100px 20px;
   background-color: #f9f5ef;
   text-align: center;
 }
@@ -374,7 +412,7 @@ main {
 .stats-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
@@ -396,7 +434,7 @@ main {
 
 /* Testimoni Section */
 .testimoni-section {
-  padding: 60px 20px;
+  padding: 105px 10px;
   background-color: #fff;
   text-align: center;
 }
@@ -468,4 +506,134 @@ main {
   font-size: 1.1em;
   margin-bottom: 20px;
   color: white; /* biar kelihatan di bg gelap */
+}
+
+/* About Page */
+.about-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* abu muda */
+}
+
+.about-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.about-section p, 
+.about-section ul {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.about-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-section ul li {
+  margin: 8px 0;
+}
+
+/* Team Grid */
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.team-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Kontak Section */
+.kontak-section {
+  padding: 50px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+}
+
+.kontak-section h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.kontak-section p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.kontak-section ul {
+  list-style: none;      /* hilangkan bullet */
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block; /* biar rata tengah */
+  text-align: left;      /* isi teks rata kiri */
+}
+
+.kontak-section ul li {
+  margin: 8px 0;
+  font-size: 1.05em;
+}
+
+.kontak-section ul li {
+  margin: 10px 0;
+  font-size: 1.05em;
+}
+
+.kontak-section ul li i {
+  margin-right: 8px;
+  color: #fff; /* warna ikon */
+}
+.kontak-section ul li a {
+  color: #fff; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.kontak-section ul li a:hover {
+  color: var(--primary-color);
+}
+
+.kontak-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* jarak antar ikon */
+  margin-top: 20px;
+}
+
+.kontak-links a {
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* jarak ikon ke teks */
+  transition: color 0.3s ease;
+}
+
+.kontak-links a:hover {
+  color: var(--primary-color);
+}
+
+.kontak-links i {
+  font-size: 1.3em;
 }

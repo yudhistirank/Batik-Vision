@@ -6,7 +6,7 @@ Frontend Batik Vision adalah implementasi UI/UX untuk website prediksi Batik Mad
 
 - Upload gambar batik
 - Preview hasil klasifikasi:
-  - Batik Madura vs Luar Madura
+  - Batik Madura atau Luar Madura
   - Batik Nusantara (beberapa jenis batik Nusantara)
 - Menampilkan confidence dari model
 - Terhubung langsung ke REST API dari backend Flask
