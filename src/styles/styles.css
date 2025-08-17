@@ -121,18 +121,14 @@ nav {
 
 nav .nav-container {
   background-color: var(--primary-color);
-
   position: sticky;
   inset-block-start: 0;
-
   box-shadow: 0 2px 2px 0 #333333aa;
 }
 
 nav .nav-content {
   padding: 16px 8px;
-
   display: flex;
-
   flex-direction: column;
   justify-content: space-between;
   row-gap: 8px;
@@ -152,13 +148,11 @@ nav .auth-btn-container a:hover {
   text-decoration: underline;
 }
 
-nav .nav-list {
+/* Default nav-list (mobile first: hidden) */
+.nav-list {
   list-style: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: none;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -172,7 +166,7 @@ nav .nav-list {
   cursor: pointer;
 }
 
-/* Mobile Responsive */
+/* Mobile (≤768px) */
 @media (max-width: 768px) {
   nav .nav-content {
     flex-direction: row;
@@ -198,6 +192,31 @@ nav .nav-list {
 
   .hamburger {
     display: block;
+  }
+}
+
+/* Desktop (≥769px) */
+@media (min-width: 769px) {
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    position: static;
+    background: none;
+    box-shadow: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav .nav-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -480,11 +499,11 @@ main {
 /* Tombol CTA */
 .cta-buttons {
   display: flex;
-  justify-content: center;   /* tombol selalu ke tengah */
+  justify-content: center;   
   align-items: center;
-  gap: 20px;                 /* jarak antar tombol */
+  gap: 20px;                 
   margin-top: 20px;
-  flex-wrap: wrap;           /* biar responsif di layar kecil */
+  flex-wrap: wrap;           
 }
 
 .cta-buttons .btn {
@@ -499,20 +518,20 @@ main {
 
 .cta-buttons .btn:hover {
   background-color: var(--primary-color);
-  color: #fff; /* teks jadi kebalikan warna bg */
+  color: #fff; 
 }
 
 .cta-section p {
   font-size: 1.1em;
   margin-bottom: 20px;
-  color: white; /* biar kelihatan di bg gelap */
+  color: white; 
 }
 
 /* About Page */
 .about-section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f9f9f9; /* abu muda */
+  background-color: #f9f5ef; 
 }
 
 .about-section h2 {
@@ -583,11 +602,11 @@ main {
 }
 
 .kontak-section ul {
-  list-style: none;      /* hilangkan bullet */
+  list-style: none;      
   padding: 0;
   margin: 0 auto;
-  display: inline-block; /* biar rata tengah */
-  text-align: left;      /* isi teks rata kiri */
+  display: inline-block;
+  text-align: left;
 }
 
 .kontak-section ul li {

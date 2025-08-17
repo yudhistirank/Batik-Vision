@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Hamburger Menu
   const hamburger = document.getElementById("hamburger");
-  const navList = document.getElementById("nav-list");
+  const navList = document.querySelector(".nav-list");
 
   if (hamburger && navList) {
     hamburger.addEventListener("click", () => {
