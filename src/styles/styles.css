@@ -650,7 +650,7 @@ main {
 }
 
 .kontak-links a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .kontak-links i {
