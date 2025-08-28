@@ -1,4 +1,4 @@
-const BASE_URL = 'https://batik-backend-v2-792988373365.asia-southeast2.run.app';
+const BASE_URL = 'https://batik-maduraku-792988373365.asia-southeast2.run.app';
 
 const ENDPOINT = {
   predict: `${BASE_URL}/predict`,
