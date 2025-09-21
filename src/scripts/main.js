@@ -100,7 +100,13 @@ async function uploadFile(formData) {
     hideElement(result);
     showElement(loadingPredict);
 
-    const response = await PredictAPI.predict(formData);
+    // Choose service based on current page: use Nusantara on batiknusantara.html
+    const pathname = window.location.pathname || '';
+    const isNusantaraPage = pathname.toLowerCase().includes('batiknusantara.html');
+
+    const response = isNusantaraPage
+      ? await PredictAPI.predictNusantara(formData)
+      : await PredictAPI.predict(formData);
 
     showPredictionResult(response);
     showElement(result);

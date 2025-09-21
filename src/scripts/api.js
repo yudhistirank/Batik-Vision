@@ -1,12 +1,19 @@
-const BASE_URL = 'https://batik-maduraku-792988373365.asia-southeast2.run.app';
+// Base URLs for different prediction services
+const BASE_URL_MADURA = 'https://batik-maduraku-792988373365.asia-southeast2.run.app';
+// Added Nusantara service base URL (same function as Madura but different backend)
+const BASE_URL_NUSANTARA = 'http://localhost:8080';
 
 const ENDPOINT = {
-  predict: `${BASE_URL}/predict`,
+  madura: `${BASE_URL_MADURA}/predict`,
+  nusantara: `${BASE_URL_NUSANTARA}/predict`,
 };
 
 class PredictAPI {
-  static async predict(data) {
-    const response = await fetch(ENDPOINT.predict, {
+  // predict(formData, service = 'madura') - service can be 'madura' or 'nusantara'
+  static async predict(data, service = 'madura') {
+    const url = ENDPOINT[service] || ENDPOINT.madura;
+
+    const response = await fetch(url, {
       method: 'POST',
       body: data,
       redirect: 'follow',
@@ -15,7 +22,7 @@ class PredictAPI {
     const contentType = response.headers.get('content-type');
 
     if (!response.ok) {
-      // Coba ambil pesan error dari response jika ada
+      // Try to read error message from JSON response if available
       let errorMessage = `HTTP error ${response.status}`;
       if (contentType && contentType.includes('application/json')) {
         const errorData = await response.json();
@@ -26,5 +33,10 @@ class PredictAPI {
 
     const json = await response.json();
     return json;
+  }
+
+  // Convenience wrapper for Nusantara predictions
+  static async predictNusantara(data) {
+    return this.predict(data, 'nusantara');
   }
 }
