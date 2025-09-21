@@ -1,7 +1,7 @@
 // Base URLs for different prediction services
 const BASE_URL_MADURA = 'https://batik-maduraku-792988373365.asia-southeast2.run.app';
 // Added Nusantara service base URL (same function as Madura but different backend)
-const BASE_URL_NUSANTARA = 'http://localhost:8080';
+const BASE_URL_NUSANTARA = 'https://batik-nusantara-792988373365.asia-southeast2.run.app';
 
 const ENDPOINT = {
   madura: `${BASE_URL_MADURA}/predict`,
